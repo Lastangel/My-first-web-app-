@@ -7,13 +7,17 @@
  <h1>My To Do List</h1>
 <!-- Document charset-->
 <meta charset= "UTF-8">
+<!-- description-->
+<meta name="descrption" content= "To do list, that gather's all my chor's for the day."/>
+<!-- mobile browser ready-->
+<meta name="viewport" content= "user-scalable=no, width=device-width" />
 
 <!-- Document Title-->
 <title>My To Do List</title>
 <!--Document body -->
 </head>
 <body>
- <p>This web App is for recoding all the things that need to be done on a day to day basis.</p>
+ <p>This web App is for recoding all the things that need to be done on a day to day basis. Don't ever forget a chor again!!</p>
 </body>
 
 </html>
