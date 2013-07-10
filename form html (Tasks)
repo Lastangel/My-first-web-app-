@@ -3,7 +3,7 @@
   <head>
    <meta charset="utef-8">
    <meta name="description" content="all the things I need to do for the day" />
-   <meta keywords="Vacuum Living room, wash clothes, do dishes, gas up car, go to store" />
+   <meta keywords="Vacuum Living room, wash clothes, gas up car, go to store, Sweep Kitchen" />
    <meta name="viewport" content="user-scalable=no, width=device-width" />
    <meta name="robots" content="index, follow" />
    <title>My Task's</title>
@@ -12,5 +12,29 @@
     <body>
      <h1>My Task's</h1>
      <form action="#" method="post"
+       <fieldset>
+        <legend>My Info</legend>
+        <ul>
+            <li><label for= "fname"> First Name:</label><input type="text" id="fname" /></li>
+            <li><label for= "lname"> Last  Name:</label><input type="text" id="lname" /></li>
+            <li><label for="pword">  Password:</label><input type="text" id="pword" /></li>
+            <li><label for="email">  Email:</label><input type="text" id="email" /></li>
+        </ul>
+       </fieldset>
+        <fieldset>
+         <legend> My Task's</legend>
+          <ul>
+            <li>
+                Check the Task's you want to complete:
+                <ul>
+                    <li><input type="checkbox" value="Vacuum Living room" id="vLivingRoom" /><label for="vLivingRoom">"Vacuum Living room"</label></li>
+                    <li><input type="checkbox" value="Sweep Kitchen" id="sKitchen" /><label for="sKitchen">"Sweep Kitchen</label></li>
+                    <li><input type="checkbox" value="Wash Dishes" id="wDishes" /><label for="wDishes">"Wash Dishes"</label></li>
+                    <li><input type="checkbox" value="Gas up my Car" id="gUpCar" /><label for="gUpCar">"Gas up my Car"</label></li>
+                    <li><input type="checkbox" value="Go to corner Store" id="cStore" /><label for="cStore">"Go to corner Store"</label></li>
+                </ul>
+            </li>
+          </ul>
+       </fieldset>
     </body>
     </html>
