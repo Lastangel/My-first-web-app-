@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Project 1, Arthor: Clifton Abraham, Date: 07/8/2013 -->
+<!-- Project 1, Arthor: Clifton Abraham, Date: 07/8/2013, VFW 1307-->
 <!-- Document html-->
 <html>
 <!-- Document head-->
@@ -20,5 +20,5 @@
      <p>This web App is for recording all the things that need to be done on a day to day basis. Don't ever forget a Tasks again!!</p>
        
     </body>
-      <a href="Abraham_Clifton_1307_project1/form.html">Set tasks</a>
+      <a href="form.html">Set tasks</a>
 </html>
