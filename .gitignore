@@ -11,6 +11,8 @@
     <meta name="descrption" content= "To do list, that gather's all my chor's for the day."/>
     <!-- mobile browser ready-->
     <meta name="viewport" content= "user-scalable=no, width=device-width" />
+    <!-- Css Link for document-->
+    <link href="CSS/style.css" type="css/text" rel="stylesheet" />
   
 <!-- Document Title-->
 <title>My To Do List</title>
