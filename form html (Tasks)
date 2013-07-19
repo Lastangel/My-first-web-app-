@@ -8,14 +8,13 @@
    <meta name="viewport" content="user-scalable=no, width=device-width" />
    <meta name="robots" content="index, follow" />
    <title>My Task's</title>
-   
-    </head>
+     </head>  
     <body>
      <h1>My Tasks</h1>
-     <form action="#" method="post">
+     <form action="#" method="post" id="myForm">
        <fieldset>
         <legend>My Info</legend>
-        <ul>
+        <ul id="information">
             <li><label for= "fname"> First Name:</label><input type="text" id="fname" /></li>
             <li><label for= "lname"> Last  Name:</label><input type="text" id="lname" /></li>
             <li><label for="pword">  Password:</label><input type="password" id="pword" /></li>
@@ -28,17 +27,19 @@
             <li>
                 Check the Task's you want to complete:
                 <ul>
-                    <li><input type="checkbox" value="Vacuum Living room" id="vLivingRoom" /><label for="vLivingRoom">Vacuum Living room</label></li>
-                    <li><input type="checkbox" value="Sweep Kitchen" id="sKitchen" /><label for="sKitchen">Sweep Kitchen</label></li>
-                    <li><input type="checkbox" value="Wash Dishes" id="wDishes" /><label for="wDishes">Wash Dishes</label></li>
-                    <li><input type="checkbox" value="Gas up the Vehicle" id="gUpCar" /><label for="gUpVehicle">Gas up the Vehicle</label></li>
-                    <li><input type="checkbox" value="Go to corner Store" id="cStore" /><label for="cStore">Go to corner Store</label></li>
+                    <li><input type="checkbox" value="Vacuum Living room" id="vLivingRoom" name="chor" /><label for="vLivingRoom">Vacuum Living room</label></li>
+                    <li><input type="checkbox" value="Sweep Kitchen" id="sKitchen" name="chor" /><label for="sKitchen">Sweep Kitchen</label></li>
+                    <li><input type="checkbox" value="Wash Dishes" id="wDishes" name="chor" /><label for="wDishes">Wash Dishes</label></li>
+                    <li><input type="checkbox" value="Gas up the Vehicle" id="gUpCar"name="chor" /><label for="gUpVehicle">Gas up the Vehicle</label></li>
+                    <li><input type="checkbox" value="Go to corner Store" id="cStore" name="chor" /><label for="cStore">Go to corner Store</label></li>
                     <li><label for="comments"> Any additional Tasks?:</label><textarea id="comments">Type Tasks here.</textarea></li>
                 </ul>
             </li>
           </ul>
        </fieldset>
-         <input type="submit" value="Completed Tasks" />
+         <input type="submit" value="Completed Tasks" id="complete" />
         </form>
+               <!-- JS Link-->
+         <script src="JS/main.js" type="text/javascript"></script>
     </body>
     </html>
