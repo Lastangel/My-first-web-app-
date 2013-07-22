@@ -3,7 +3,9 @@
 // Project 2 07/16/2013
 window.addEventListener("DOMContentLoaded", function(){
 var id;
-var tasks;
+var item;
+var saveData;
+
 // getElements
  function $(x){
 var information = document.getElementById(x);
@@ -17,22 +19,22 @@ var information = document.getElementById(x);
    clearData.addEventListener("click", clearStorage);*/
    
    var saveData = $("complete");
-   saveData.addEventListener("click", saveData);
+  saveData.addEventListener("click", saveData);
    
         saveData = function(){
-        var id = math.floor( math.random() * 1000000001 );
-        tasks = {};
-        tasks = ["First name:", $("fname").value ];
-        tasks = ["Last Name:" , $("lname").value  ];
-        tasks = ["Email:" , $("email").value ];
-        tasks = ["Password:" , $("pword").value ];
-        tasks = ["Comments:", $("comments").value];
+        var id             = math.floor( math.random() * 1000000001 );
+     item               = {};
+     item.fname           = ["First name:", $("fname").value ];
+     item.lname           = ["Last Name:" , $("lname").value  ];
+      item.email           = ["Email:" , $("email").value ];
+     item.pword           = ["Password:" , $("pword").value ];
+        /*item.comments    = ["Comments:", $("comments").value];*/
         }
       
         // Saved Data
-     localStorage.setItem(id , JSON.stringify(tasks));
-     alert("Tasks Saved");
-
+     localStorage.setItem(id , JSON.stringify(item));
+    // alert("Tasks Saved");
+     // saveData.addEventListener("click", saveData);
 /*
 var fName = document.getElementById("fname");
 var lName = document.getElementById("lname");
@@ -66,17 +68,7 @@ var eMail = document.getElementById("email");
     var pWord = localStorage.setItem("PassWord" , pword.value);
     var eMail = localStorage.setItem("Email"    , email.value);
    // var myTask = localStarage.setItem("ul", ul.value);
-   // Store Data function
-   var saveData = function(){
-        var id = math.floor( math.random() * 1000000001 );
-        tasks = {};
-        tasks = ["First name:", $("fname").value ];
-        tasks = ["Last Name:" , $("lname").value  ];
-        tasks = ["Email:" , $("email").value ];
-        tasks = ["Password:" , $("pword").value ];
-        tasks = ["Comments:", $("comments").value];
-       // tasks = ["My Tasks:"$("myTasks").value]
-       
+   /s/ Store
  // Saved Data
  localStorage.setItem(id , JSON.stringify(tasks));
  alert("Tasks Saved");
