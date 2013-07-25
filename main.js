@@ -16,8 +16,7 @@ var information = document.getElementById(x);
     return information;
    }
    // set Links
-  /* var displayLink = $("displayLink");
-   displayLink.addEventListener("click", getData);*/
+
    
  /*  var clearData = $("clear");
    clearData.addEventListener("click", clearStorage);*/
@@ -52,22 +51,15 @@ var information = document.getElementById(x);
     switch(n){
         case "on":
             $("myForm").style.display = "none";
-            
-           // $("clear").stlye.display = "inline";
-            
-            $("displayLink").style.display = "none";
-            
-            $("addNew").style.display = "inline";
+             $("clear").style.display = "inline";
+             $("displayLink").style.display = "none";
+             $("addNew").style.display = "inline";
             break;
         case "off":
              $("myForm").style.display = "block";
-             
-            $("clear").stlye.display = "inline";
-            
-            $("displayLink").style.display = "inline";
-            
-            $("addNew").style.display = "none";
-            
+              $("clear").style.display = "inline";
+             $("displayLink").style.display = "inline";
+             $("addNew").style.display = "none";
             $("items").style.display = "none"; // correct 
             break;
         default:
@@ -134,7 +126,20 @@ var information = document.getElementById(x);
 
     var displayLink = $("displayLink");
    displayLink.addEventListener("click", showData);
-       
+   
+    clearStorage = function(){
+     if(localStorage.length === 0){
+        alert("There is no Data to Clear")
+     }else{
+        localStorage.clear();
+        alert("All the Tasks are Deleted!");
+        window.location.reload();
+        return false; 
+     }
+    } // end of clear function
+  var clearData = $("clear");
+  clearData.addEventListener("click", clearStorage);
+  
 }); // end of function
 
      
