@@ -1,3 +1,4 @@
+
 // Arthor: Clifton Abraham
 // VFW 1307
 // Project 2 07/16/2013
@@ -52,7 +53,7 @@ var information = document.getElementById(x);
         case "on":
             $("myForm").style.display = "none";
             
-            $("clear").stlye.display = "inline";
+           // $("clear").stlye.display = "inline";
             
             $("displayLink").style.display = "none";
             
@@ -106,7 +107,7 @@ var information = document.getElementById(x);
  
   // var displayLink = $("displayLink");
    showData = function(){
-   // toggleControls("on");
+   toggleControls("on");
    var makeDiv = document.createElement("div");
    makeDiv.setAttribute("id", "items");
   var makeList = document.createElement("ul");
