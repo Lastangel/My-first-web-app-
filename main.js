@@ -20,7 +20,7 @@ var information = document.getElementById(x);
    
  /*  var clearData = $("clear");
    clearData.addEventListener("click", clearStorage);*/
- getCheckBoxValue = function(){
+ getCheckBoxValue = function(){ // check this 
    if($("vLivingRoom").checked){
     vLivingRoom = $("vLivingRoom").value;
    } else{
@@ -67,9 +67,6 @@ var information = document.getElementById(x);
     }
   }
   
-  
-  
-   
       saveData = function(){
      var id                 = Math.floor( Math.random() * 1000000001 );
     getCheckBoxValue();
@@ -95,11 +92,14 @@ var information = document.getElementById(x);
        wDishes     = "No",
        gUpCar      = "No",
        cStore      = "No";
+
+
  save.addEventListener("click", saveData)
- 
-  // var displayLink = $("displayLink");
-   showData = function(){
+  showData = function(){
    toggleControls("on");
+   if(localStorage.length === 0){
+    alert("No Data Saved in Storage")
+   }
    var makeDiv = document.createElement("div");
    makeDiv.setAttribute("id", "items");
   var makeList = document.createElement("ul");
@@ -108,6 +108,7 @@ var information = document.getElementById(x);
    $("items").style.display = "block"; // make corection 
    for(var i=0, j=localStorage.length; i<j; i++){
     var makeli = document.createElement("li");
+    var linksLi = document.createElement("li"); // week 3 addition
     makeList.appendChild(makeli);
     var key    = localStorage.key(i);
     var value  = localStorage.getItem(key);
@@ -119,10 +120,35 @@ var information = document.getElementById(x);
       makeSubList.appendChild(makeSubli);
       var optSubText = object [n] [0]+ " " + object [n] [1];
       makeSubli.innerHTML = optSubText;
+      makeSubList.appendChild(linksLi); // week 3 addition
     }
-    
+     makeItemLinks(localStorage.key(i) , linksLi);
    }
-  } // end of display function 
+  } // end of show data  function 
+   makeItemLinks = function(key, linksLi){
+    
+    var editLink = document.createElement("a");
+        editLink.href = "#";
+        editLink.key = key;
+    var editText = "Edit Task?";
+   // editLink.addEventListener("click", editItem);
+    editLink.innerHTML = editText;
+     linksLi.appendChild(editLink);
+     
+     var breakTag = document.createElement("br");
+         linksLi.appendChild(breakTag);
+   
+     var deleteLink =document.createElement("a");
+      deleteLink.href = "#";
+      deleteLink.key = key;
+  var deleteText = "Delete Task?";
+    
+   // deleteLink.addEventListener("click", deleteItem);
+    deleteLink.innerHTML = deleteText;
+    
+    linksLi.appendChild(deleteLink);
+    
+ }
 
     var displayLink = $("displayLink");
    displayLink.addEventListener("click", showData);
