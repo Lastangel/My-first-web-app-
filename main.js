@@ -18,8 +18,7 @@ var information = document.getElementById(x);
    // set Links
 
    
- /*  var clearData = $("clear");
-   clearData.addEventListener("click", clearStorage);*/
+
  getCheckBoxValue = function(){ // check this 
    if($("vLivingRoom").checked){
     vLivingRoom = $("vLivingRoom").value;
@@ -67,6 +66,7 @@ var information = document.getElementById(x);
     }
   }
   
+  
       saveData = function(){
      var id                 = Math.floor( Math.random() * 1000000001 );
     getCheckBoxValue();
@@ -86,15 +86,6 @@ var information = document.getElementById(x);
 
   } //end of save data function
   
-   var save = $("complete"),
-       vLivingRoom = "No",
-       sKitchen    = "No",
-       wDishes     = "No",
-       gUpCar      = "No",
-       cStore      = "No";
-
-
- save.addEventListener("click", saveData)
   showData = function(){
    toggleControls("on");
    if(localStorage.length === 0){
@@ -131,7 +122,7 @@ var information = document.getElementById(x);
         editLink.href = "#";
         editLink.key = key;
     var editText = "Edit Task?";
-   // editLink.addEventListener("click", editItem);
+    editLink.addEventListener("click", editItem);
     editLink.innerHTML = editText;
      linksLi.appendChild(editLink);
      
@@ -143,14 +134,53 @@ var information = document.getElementById(x);
       deleteLink.key = key;
   var deleteText = "Delete Task?";
     
-   // deleteLink.addEventListener("click", deleteItem);
+   deleteLink.addEventListener("click", deleteItem);
     deleteLink.innerHTML = deleteText;
-    
-    linksLi.appendChild(deleteLink);
+     linksLi.appendChild(deleteLink);
     
  }
-
+   editItem = function(){
+    var value = localStorage.getItem(this.key);
+    var item = JSON.parse(value);
+    
+    toggleControls("off");
+    
+    $("fname").value = item.fname[1];
+    $("lname").value = item.lname[1];
+    $("email").value = item.email[1];
+    $("pword").value = item.pword[1];
+ 
+   
+   if(item.vLivingRoom[1] == "Yes"){
+    $("vLivingRoom").setAttribute("checked", "checked");
+   }
+   if(item.sKitchen[1] == "Yes"){
+    $("sKitchen").setAttribute("checked", "checked");
+   }
+   if(item.wDishes [1] == "Yes"){
+     $("wDishes").setAttribute("checked", "checked");
+     }
+     if(item.gUpCar[1] == "Yes"){
+       $("gUpCar").setAttribute("checked", "checked");
+     }
+     if(item.cStore[1] == "Yes"){
+        $("cStore").setAttribute("checked", "checked");
+     }
+     $("comments").value = item.comments[1];
+     
+   } // end of edit function
+   
+   deleteItem = function(){
+    var ask = confirm("Are you sure you want to delete Task?");
+    if(ask){
+        localStorage.removeItem(this.key);
+        window.location.reload();
+    }else{
+        alert("your task has not been deleted");
+    }
+   }
     var displayLink = $("displayLink");
+   
    displayLink.addEventListener("click", showData);
    
     clearStorage = function(){
@@ -165,6 +195,14 @@ var information = document.getElementById(x);
     } // end of clear function
   var clearData = $("clear");
   clearData.addEventListener("click", clearStorage);
+     var save = $("complete"),
+       vLivingRoom = "No",
+       sKitchen    = "No",
+       wDishes     = "No",
+       gUpCar      = "No",
+       cStore      = "No";
+
+ save.addEventListener("click", saveData)
   
 }); // end of function
 
