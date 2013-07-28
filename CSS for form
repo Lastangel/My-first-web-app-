@@ -1,15 +1,15 @@
 
 h1{
 margin: 60px;
-background: #1e20cb;
+background: #6bc2e5;
 margin: 15px 30px 10px 5px;
 padding: 10px;
 width: 200px;
 }
 
 body{
-    background-color: #df731b;
+    background-color: #ffff0b;
 }
 form{
     font-family: sans-serif;
-}
+} 
