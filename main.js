@@ -1,11 +1,7 @@
 
 // Arthor: Clifton Abraham
 // VFW 1307
-// Project 2 07/16/2013
-var id;
-var item;
-var save;
-var saveData;
+// Project 3 07/27/2013
 
 window.addEventListener("DOMContentLoaded", function(){
 
@@ -168,6 +164,15 @@ var information = document.getElementById(x);
      }
      $("comments").value = item.comments[1];
      
+     save.removeEventListener("Click", saveData);
+     $("complete").value = "Edit Task";
+     var editComplete = $("complete");
+     editComplete.addEventListener("click", validate);
+     editComplete.key = this.key;
+     
+     
+     
+     
    } // end of edit function
    
    deleteItem = function(){
@@ -195,14 +200,78 @@ var information = document.getElementById(x);
     } // end of clear function
   var clearData = $("clear");
   clearData.addEventListener("click", clearStorage);
+  
+  validate = function(e){
+    var getFname = $("fname");
+    var getLname = $("lname");
+    var getEmail = $("email");
+    var getPWord = $("pword");
+   errMsg.innerHTML = "";
+     getFname.style.border = "1px solid black";
+     getLname.style.border = "1px solid black";
+     getEmail.style.border = "1px solid black";
+     getPWord.style.border = "1px solid black";
+     
+  var messageAry = [ ];
+    
+    if(getFname.value === ""){
+        var fNameError = "Please enter First name. ";
+        getFname.style.border = "1px solid red";
+        messageAry.push(fNameError);
+    }
+    
+    if(getLname.value === ""){
+        var lNameError = "Please enter Last name. ";
+        getLname.style.border = "1px solid red";
+        messageAry.push(lNameError);
+    }
+    
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!(re.exec(getEmail.value))){
+        var emailError = "Please enter a valid email address.";
+        getEmail.style.border = "1px solid red";
+        messageAry.push(emailError);
+    }
+      if(getPWord.value === ""){
+        var pWordError = "Please make a password.";
+        getPWord.style.border = "1px solid red";
+        messageAry.push(pWordError);
+    }
+    if(messageAry.length >= 1){
+        for(var i=0, j=messageAry.length; i< j; i++){
+            var txt = document.createElement("li");
+            txt.innerHTML = messageAry[i];
+            $("errors").appendChild(txt);
+        } e.preventDefault();
+       return false;
+ 
+    } else {
+        saveData();
+    }
+ 
+  
+  }
+  
+  
+  
+  
+  // gloabal varibles
+  
      var save = $("complete"),
        vLivingRoom = "No",
        sKitchen    = "No",
        wDishes     = "No",
        gUpCar      = "No",
        cStore      = "No";
+     var errMsg = $("errors");
+    
+     var id,
+         item,
+         save,
+         saveData;
 
- save.addEventListener("click", saveData)
+
+ save.addEventListener("click", validate)
   
 }); // end of function
 
