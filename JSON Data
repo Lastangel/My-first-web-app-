@@ -1,0 +1,33 @@
+// Clifton Abraham
+// project 4 VFW   1307
+// Date: 07/30/13
+
+var json = {
+ "Info 1": {
+    "fname":    ["First Name:" , "Clifton"],
+    "lname":    ["Last Name:" , "Abraham"],
+    "pword":    ["Password:" , "lastangel86"],
+    "email":    ["Email:" , "kingpin2086@fullsail.edu"],
+  "comments":   ["comments:" , "also clean SUV"],
+  "vLivingRoom":["Vaccum living room:" , "yes"],
+  "sKitchen":   ["Sweep Kitchen:" , "yes"],
+  "wDishes":    ["Wash dishes:" , "No"],
+  "gUpCar":     ["Gas up Car:" , "yes"],
+  "cStore":     ["Corner Store:" , "yes"]
+ },
+ "Info 2": {
+    "fname":    ["First Name:" , "Cat-Tyna"],
+    "lname":    ["Last Name:" , "Abraham"],
+    "pword":    ["Password:" , "kityn111210"],
+    "email":    ["Email:" , "aygivuponya@hotmail.com"],
+  "comments":   ["comments:" , "also clean attic"],
+  "vLivingRoom":["Vaccum living room:" , "No"],
+  "sKitchen":   ["Sweep Kitchen:" , "Yes"],
+  "wDishes":    ["Wash dishes:" , "Yes"],
+  "gUpCar":     ["Gas up Car:" , "No"],
+  "cStore":     ["Corner Store:" , "No"]
+ }
+
+
+} // end of JSON data 
+
