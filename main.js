@@ -1,4 +1,3 @@
-
 // Arthor: Clifton Abraham
 // VFW 1307
 // Project 3 07/27/2013
@@ -85,7 +84,8 @@ var information = document.getElementById(x);
   showData = function(){
    toggleControls("on");
    if(localStorage.length === 0){
-    alert("No Data Saved in Storage")
+    alert("No Data Saved in Storage. Default Data as been added.");
+    autoFillData();
    }
    var makeDiv = document.createElement("div");
    makeDiv.setAttribute("id", "items");
@@ -111,7 +111,16 @@ var information = document.getElementById(x);
     }
      makeItemLinks(localStorage.key(i) , linksLi);
    }
-  } // end of show data  function 
+  } // end of show data  function
+  
+  autoFillData = function(){
+    for(var n in json){
+        var id = Math.floor( Math.random() * 1000000001 );
+        localStorage.setItem(id, JSON.stringify(json[n]))
+    }
+  }
+  
+  
    makeItemLinks = function(key, linksLi){
     
     var editLink = document.createElement("a");
