@@ -71,11 +71,11 @@ var information = document.getElementById(x);
        item.email           = ["Email:" , $("email").value ];
        item.pword           = ["Password:" , $("pword").value ];
        item.comments        = ["Comments:", $("comments").value];
-       item.vLivingRoom     = ["Vacuum Living room:", $("vLivingRoom").value];
-       item.sKitchen        = ["Sweep Kitchen:", $("sKitchen").value];
-       item.wDishes         = ["Wash Dishes:", $("wDishes").value];
-       item.gUpCar          = ["Gas up the Vehicle:", $("gUpCar").value];
-       item.cStore          = ["Go to corner Store:", $("cStore").value ];
+       item.vLivingRoom     = ["Vacuum Living room:", vLivingRoom ];
+       item.sKitchen        = ["Sweep Kitchen:",  sKitchen];
+       item.wDishes         = ["Wash Dishes:",  wDishes];
+       item.gUpCar          = ["Gas up the Vehicle:",   gUpCar];
+       item.cStore          = ["Go to corner Store:",  cStore ];
     localStorage.setItem(id , JSON.stringify(item)); 
     alert("Tasks Saved");
 
@@ -156,19 +156,19 @@ var information = document.getElementById(x);
     $("pword").value = item.pword[1];
  
    
-   if(item.vLivingRoom[1] == "Yes"){
+   if(item.vLivingRoom[1] == "Vacuum Living room"){
     $("vLivingRoom").setAttribute("checked", "checked");
    }
-   if(item.sKitchen[1] == "Yes"){
+   if(item.sKitchen[1] == "Sweep Kitchen"){
     $("sKitchen").setAttribute("checked", "checked");
    }
-   if(item.wDishes [1] == "Yes"){
+   if(item.wDishes [1] == "Wash Dishes"){
      $("wDishes").setAttribute("checked", "checked");
      }
-     if(item.gUpCar[1] == "Yes"){
+     if(item.gUpCar[1] == "Gas up the Vehicle"){
        $("gUpCar").setAttribute("checked", "checked");
      }
-     if(item.cStore[1] == "Yes"){
+     if(item.cStore[1] == "Go to corner Store"){
         $("cStore").setAttribute("checked", "checked");
      }
      $("comments").value = item.comments[1];
