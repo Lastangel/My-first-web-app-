@@ -8,7 +8,7 @@ width: 200px;
 }
 
 body{
-    background-color: #ffff0b;
+    background-color: #b1ea41;
 }
 form{
     font-family: sans-serif;
