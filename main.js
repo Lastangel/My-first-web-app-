@@ -102,6 +102,7 @@ var information = document.getElementById(x);
     var object = JSON.parse(value);
     var makeSubList = document.createElement("ul");
    makeli.appendChild(makeSubList);
+   getImage(object.sKitchen[1], makeSubList);
     for(var n in object){
       var makeSubli = document.createElement("li");
       makeSubList.appendChild(makeSubli);
@@ -113,6 +114,13 @@ var information = document.getElementById(x);
    }
   } // end of show data  function
   
+  getImage = function(catName, makeSubList){
+    var imageLi = document.createElement("li");
+    makeSubList.appendChild(imageLi);
+    var newImg = document.createElement("img");
+    var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
+    imageLi.appendChild(newImg);
+  }
   autoFillData = function(){
     for(var n in json){
         var id = Math.floor( Math.random() * 1000000001 );
@@ -278,10 +286,11 @@ var information = document.getElementById(x);
          item,
          save,
          saveData;
+      
+   
 
 
  save.addEventListener("click", validate)
   
 }); // end of function
 
-     
