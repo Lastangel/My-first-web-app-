@@ -1,24 +1,24 @@
 <!DOCTYPE html>
- <!-- Arthor: Clifton Abraham, VFW 1307, project 1 form (add item)-->
+ <!-- Arthor: Clifton Abraham, VFW 1307, project 4 form (add item)-->
  <html>
   <head>
    <meta charset="utef-8">
    <meta name="description" content="all the things I need to do for the day" />
-   <meta keywords="Vacuum Living room, wash clothes, gas up car, go to store, Sweep Kitchen" />
+   <meta keywords="Vaccum, Living room,  gas up car, go to store, Sweep Kitchen" />
    <meta name="viewport" content="user-scalable=no, width=device-width" />
    <meta name="robots" content="index, follow" />
-   <link href="CSS/styleform.css" type="css/text" rel="stylesheet" />
+  <!-- <link href="CSS/styleform.css" type="css/text" rel="stylesheet" />-->
    <title>My Task's</title>
 
 
      </head>  
     <body>
      <h1>My Tasks</h1>
-     <nav>
-      <a href="#" id="clear">Clear Stored Data</a> <!-- id is clear no quates might be an issue-->
-      <a href= "#" id="displayLink">Display Data</a> <!-- id is displayLink -->
+  <!--   <nav>
+      <a href="#" id="clear">Clear Stored Data</a> 
+      <a href= "#" id="displayLink">Display Data</a> 
       <a href= "form.html" id="addNew" style= "display:none;">Add New Item</a> 
-     </nav>
+     </nav>-->
      <form action="#" method="post" id="myForm" >
        <fieldset>
         <legend>My Info</legend>
@@ -27,6 +27,7 @@
             <li><label for= "fname"> First Name:</label><input type="text" id="fname" /></li>
             <li><label for= "lname"> Last  Name:</label><input type="text" id="lname" /></li>
             <li><label for="pword">  Password:</label><input type="password" id="pword" /></li>
+            <li><label for="cpword">Confirm Password[Disabled]:</label><input type="password" id="cpword" disabled/></li>
             <li><label for="email">  Email:</label><input type="text" id="email"placeholder=email@example.com /></li>
         </ul>
        </fieldset>
@@ -35,21 +36,42 @@
           <ul>
             <li>
                 Check the Task's you want to complete:
-                <ul>
-                    <li><input type="checkbox" value="Vacuum Living room" id="vLivingRoom" name="chor" /><label for="vLivingRoom">Vacuum Living room</label></li>
-                    <li><input type="checkbox" value="Sweep Kitchen" id="sKitchen" name="chor" /><label for="sKitchen">Sweep Kitchen</label></li>
+                <ul><!-- see if Radio button goes with in this ul, same for group-->
+                    <li><input type="checkbox" value="Vacuum" id="vaccum" name="chor" /><label for="vaccum">Vacuum</label></li>
+                    <li><input type="checkbox" value="Sweep" id="sweep" name="chor" /><label for="sweep">Sweep </label></li>
                     <li><input type="checkbox" value="Wash Dishes" id="wDishes" name="chor" /><label for="wDishes">Wash Dishes</label></li>
-                    <li><input type="checkbox" value="Gas up the Vehicle" id="gUpCar"name="chor" /><label for="gUpVehicle">Gas up the Vehicle</label></li>
-                    <li><input type="checkbox" value="Go to corner Store" id="cStore" name="chor" /><label for="cStore">Go to corner Store</label></li>
+                    <li><input type="checkbox" value="Go to Store" id="Store" name="chor" /><label for="Store">Go to Store</label></li>
+                    <li><input type= "checkbox" value="Mop" id=mop name="chor"/><label for="Mop">Mop</label></li>
                     <li><label for="comments"> Any additional Tasks?:</label><textarea id="comments"placeholder=Type.></textarea></li>
                 </ul>
             </li>
           </ul>
+          <li>
+           Do you do the Selected Task everyday?:
+           <ul>
+             <li><input type='radio' value= 'yes' id='yes' name='answer'/><label for= 'yes'>Yes</label></li>
+             <li><input type='radio' value= 'no' id=no name= 'answer'/><label for='no'>No</label></li>
+            </li>
+           </ul>
+          <li>
+           <label for='location'>Where Are you Cleaning</label>
+           <select id='location'>
+            <optgroup label='What Location?'>
+             <option value='LivingRoom'>LivingRoom</option>
+             <option value='Kitchen'>Kitchen</option>
+             <option value= 'BathRoom'>BathRoom</option>
+             <option value='BedRoom'>BedRoom</option>
+             <option value= 'Work'>Work</option>
+             <option value= 'Car'>Car</option>
+            </optgroup>
+           </select>
+          </li>
        </fieldset>
          <input type="submit" value="Completed Tasks" id="complete" />
          
         </form>
-               <!-- JS Link-->
-         <script src="JS/main.js" type="text/javascript"></script>
+               <!-- JS Links
+         <script src= "JS/json.js" type= "text/javascript"></script>
+         <script src="JS/main.js"  type="text/javascript"></script>-->
     </body>
     </html>
